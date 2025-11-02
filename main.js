@@ -1,29 +1,27 @@
-const greenColorHash = '#00FF00'
-const blueColorHash = '#FFFF00'
-
-
 // Покраска всех карточек
 
-const allProductCards = document.querySelectorAll ('.card-container');
-const btnAllProductCards = document.querySelector ('#btn-change-color-all-cards');
+const allProductCards = document.querySelectorAll('.card-container');
+const btnChangeColorAllCards = document.querySelector('#btn-change-color-all-cards');
+const greenColorHash = '#00FF00'
 
-btnAllProductCards.addEventListener('click', ()=> {
-  allProductCards.forEach((card) => card.style.backgroundColor = greenColorHash) 
-  });
+btnChangeColorAllCards.addEventListener('click',() => {
+  allProductCards.forEach((card)=> card.style.backgroundColor = greenColorHash)
+});
 
 // Покраска первой карточки
 
 const firstProductCard = document.querySelector('.card-container');
-const btnChangeColorFirstCard = document.querySelector ('#btn-change-color-first-card');
+const btnChangeColorFirstCard = document.querySelector('#btn-change-color-first-card');
+const yellowColorHash = '#FFFF00'
 
-btnChangeColorFirstCard.addEventListener ('click', ()=> {
-  firstProductCard.style.backgroundColor = blueColorHash;
+btnChangeColorFirstCard.addEventListener('click', () => {
+  firstProductCard.style.backgroundColor = yellowColorHash;
 })
 
 // Открыть google
 
-const openGoogleButton = document.querySelector ('#btn-open-google');
-openGoogleButton.addEventListener ('click', openGoogle)
+const openGoogleButton = document.querySelector('#btn-open-google');
+openGoogleButton.addEventListener('click', openGoogle)
 
 function openGoogle () {
   const answer = confirm ('Вы действительно хотите открыть Google?')
@@ -37,26 +35,22 @@ function openGoogle () {
 
 // Вывод в консоль лог
 
-const outputLogButton = document.querySelector ('#btn-output-console-log')
-outputLogButton.addEventListener ('click', ()=> outputConsoleLog ('ДЗ №4'))
+const outputLogButton = document.querySelector('#btn-output-console-log')
+outputLogButton.addEventListener('click', () => outputConsoleLog('ДЗ №4'))
 
-function outputConsoleLog (message) {
+function outputConsoleLog(message) {
   alert(message)
-  console.log (message)
+  console.log(message)
 }
 
-const titleInLog = document.querySelector ('.main-title')
-titleInLog.addEventListener ('mouseover', () => {
-  console.log (titleInLog);
+const mainTitle = document.querySelector('.main-title')
+mainTitle.addEventListener('mouseover', () =>{
+  console.log (mainTitle.textContent);
 })
 
 // Смена фона кнопки по нажатию 
 
-const btnChangeBG = document.querySelector ('#btn-change-bg')
-btnChangeBG.addEventListener ('click', ()=> {
-if (btnChangeBG.classList.contains('btn-change-bg')) {
-  btnChangeBG.classList.remove('btn-change-bg');
-} else {
-  btnChangeBG.classList.add('btn-change-bg')
-}
+const btnChangeBG = document.querySelector('#btn-change-bg-yellow')
+btnChangeBG.addEventListener('click', () => {
+  btnChangeBG.classList.toggle('btn-change-bg-yellow')
 })
