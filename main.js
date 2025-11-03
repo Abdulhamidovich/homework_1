@@ -23,8 +23,8 @@ btnChangeColorFirstCard.addEventListener('click', () => {
 const openGoogleButton = document.querySelector('#btn-open-google');
 openGoogleButton.addEventListener('click', openGoogle)
 
-function openGoogle () {
-  const answer = confirm ('Вы действительно хотите открыть Google?')
+function openGoogle() {
+  const answer = confirm('Вы действительно хотите открыть Google?')
 
   if (answer === true) {
     window.open ('http://google.com')
@@ -35,22 +35,22 @@ function openGoogle () {
 
 // Вывод в консоль лог
 
-const outputLogButton = document.querySelector('#btn-output-console-log')
-outputLogButton.addEventListener('click', () => outputConsoleLog('ДЗ №4'))
+const outputLogButton = document.querySelector('#btn-show-message')
+outputLogButton.addEventListener('click', () => alertAndLog('ДЗ №4'))
 
-function outputConsoleLog(message) {
+function alertAndLog(message) {
   alert(message)
   console.log(message)
 }
 
 const mainTitle = document.querySelector('.main-title')
-mainTitle.addEventListener('mouseover', () =>{
-  console.log (mainTitle.textContent);
+mainTitle.addEventListener('mouseover', () => {
+  console.log(mainTitle.textContent);
 })
 
 // Смена фона кнопки по нажатию 
 
-const btnChangeBG = document.querySelector('#btn-change-bg')
-btnChangeBG.addEventListener('click', () => {
-  btnChangeBG.classList.toggle('bg-yellow')
+const btnToggleColor = document.querySelector('#btn-change-bg')
+btnToggleColor.addEventListener('click', () => {
+  btnToggleColor.classList.toggle('bg-yellow')
 })
