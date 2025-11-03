@@ -50,7 +50,7 @@ mainTitle.addEventListener('mouseover', () =>{
 
 // Смена фона кнопки по нажатию 
 
-const btnChangeBG = document.querySelector('#btn-change-bg-yellow')
+const btnChangeBG = document.querySelector('#btn-change-bg')
 btnChangeBG.addEventListener('click', () => {
-  btnChangeBG.classList.toggle('btn-change-bg-yellow')
+  btnChangeBG.classList.toggle('bg-yellow')
 })
