@@ -35,10 +35,10 @@ function openGoogle() {
 
 // Вывод в консоль лог
 
-const outputLogButton = document.querySelector('#btn-show-message')
-outputLogButton.addEventListener('click', () => alertAndLog('ДЗ №4'))
+const btnShowMessage = document.querySelector('#btn-show-message')
+btnShowMessage.addEventListener('click', () => showMessage('ДЗ №4'))
 
-function alertAndLog(message) {
+function showMessage(message) {
   alert(message)
   console.log(message)
 }
