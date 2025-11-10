@@ -1,10 +1,10 @@
 // Создать функцию, которая принимает 2 параметра: город и температуру и выводит сообщение в консоль 
 // "Сейчас в X температура  — Y градусов по Цельсию"
 
-function temperature (city, temp) {
-return `Сейчас в ${city} температура - ${temp} градусов по Цельсию`;
+function getTemperature(city, temp) {
+  return `Сейчас в ${city} температура - ${temp} градусов по Цельсию`;
 }
-console.log (temperature ('Москва', 30))
+console.log(getTemperature('Москва', 30))
 
 
 // Создать переменную, которая хранит внутри себя скорость звука (гуглим). Создать функцию, 
@@ -12,18 +12,18 @@ console.log (temperature ('Москва', 30))
 // если переданная скорость выше скорости звука — выводим лог "Сверхзвуковая скорость", 
 // если ниже — "Дозвуковая скорость"? если равна — "Скорость звука"
 
-const speedOfSound = 343
+const SPEEDOFSOUND = 343
 
-function speedCheck (speed) {
-  if (speed > speedOfSound) {
-    console.log ("Сверхзвуковая скорость")
-  } else if (speed === speedOfSound) {
-    console.log ("Скорость звука")
+function checkSpeed(speed) {
+  if (speed > SPEEDOFSOUND) {
+    console.log("Сверхзвуковая скорость")
+  } else if (speed === SPEEDOFSOUND) {
+    console.log("Скорость звука")
   } else {
-    console.log ("Дозвуковая скорость")
+    console.log("Дозвуковая скорость")
   }
 }
-speedCheck (500)
+checkSpeed(500)
 
 
 //  Создать переменную №1, которая содержит продукт и переменную №2, которая содержит его цену (на ваше усмотрение).
@@ -35,50 +35,38 @@ speedCheck (500)
 const knifeBerkut = "Нож Беркут"
 let priceKnifeBerkut = 7500
 
-function buyKnife (limitMoney) {
-  if (limitMoney >= priceKnifeBerkut)
-  { console.log (`${knifeBerkut} приобретён. Спасибо за покупку!`)
+function buyKnife(limitMoney) {
+  if (limitMoney >= priceKnifeBerkut) {
+    console.log(`${knifeBerkut} приобретён. Спасибо за покупку!`)
   } else {
     const difference = priceKnifeBerkut - limitMoney
-    console.log (`Вам не хватает ${difference}$, пополните баланс!`)
-  }}
-  buyKnife (45000)
-  
-  
-  // Создать 1 функцию и именовать её по своему усмотрению
-  
-  const password = 121213
-  
-  const checkPass = (userPass) => {
-    if (userPass === password) {
-      console.log ("Пароль верный")
-    } else if (userPass === "") {
-      console.log ("Введите что-нибудь")
-    } else {
-      console.log ("Пароль неверный")
-    }
+    console.log(`Вам не хватает ${difference}$, пополните баланс!`)
   }
-  
-  checkPass (121213)
-  
-  // Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению
-  
-  const firstName = "Шамиль"
-  const sirName = "Маликов"
-  const street = "Мичурина"
-  let houseNumber = 7
-  let hasCar = true
-  let hasJob = false
-  
-  
-  
-  
-  
-
-  
-  
+}
+buyKnife(45000)
 
 
-  
-  
-  
+// Создать 1 функцию и именовать её по своему усмотрению
+
+const password = 121213
+
+const checkPass = (userPass) => {
+  if (userPass === password) {
+    console.log("Пароль верный")
+  } else if (!userPass) {
+    console.log("Введите что-нибудь")
+  } else {
+    console.log("Пароль неверный")
+  }
+}
+
+checkPass(121213)
+
+// Создать 3 переменных (без разницы каких) и именовать их по своему усмотрению
+
+const firstName = "Шамиль"
+const lastName = "Маликов"
+const street = "Мичурина"
+let houseNumber = 7
+let hasCar = true
+let hasJob = false
