@@ -12,7 +12,7 @@ console.log(getTemperature('Москва', 30))
 // если переданная скорость выше скорости звука — выводим лог "Сверхзвуковая скорость", 
 // если ниже — "Дозвуковая скорость"? если равна — "Скорость звука"
 
-const SPEEDOFSOUND = 343
+const SPEED_OF_SOUND = 343;
 
 function checkSpeed(speed) {
   if (speed > SPEEDOFSOUND) {
@@ -32,14 +32,14 @@ checkSpeed(500)
 //  выводим лог "(ваше название товара) приобретён. Спасибо за покупку!", 
 //  если нет - обсчитываем разницу и выводим лог "Вам не хватает X$, пополните баланс". 
 
-const knifeBerkut = "Нож Беркут"
-let priceKnifeBerkut = 7500
+const knife = "Нож Беркут"
+let knifePrice = 7500
 
-function buyKnife(limitMoney) {
-  if (limitMoney >= priceKnifeBerkut) {
-    console.log(`${knifeBerkut} приобретён. Спасибо за покупку!`)
+function buyKnife(budget) {
+  if (budget >= knifePrice) {
+    console.log(`${knife} приобретён. Спасибо за покупку!`)
   } else {
-    const difference = priceKnifeBerkut - limitMoney
+    const difference = knifePrice - budget
     console.log(`Вам не хватает ${difference}$, пополните баланс!`)
   }
 }
