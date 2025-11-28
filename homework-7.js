@@ -31,42 +31,38 @@ console.log(filterCommentsByEmail);
 // 8. Перебрать массив таким образом, что бы пользователи с id меньше или равно 5 имели postId: 2,
 // а те, у кого id больше 5, имели postId: 1
 
-const updatePostId = userComments.map(user => {
-  if (user.id <= 5) { return { ...user, postId: 2 } }
-  else {
-    return { ...user, postId: 1 }
-  }
-});
+const updatePostId = userComments.map(user => 
+  user.id <= 5
+  ? { ...user, postId: 2}
+  : { ...user, postId: 1}
+);
 console.log(updatePostId);
 
 // 9. Перебрать массив, что бы объекты состояли только из айди и имени
 
-const mapToIdAndName = userComments.map(({ name, id }) => ({ name, id }));
-console.log(mapToIdAndName);
+const mapToIdAndName = userComments.map(userName => ({id: userName.id, name: userName.name}));
 
 // 10. Перебираем массив, добавляем объектам свойство isInvalid и проверяем: 
 // если длина тела сообщения (body) больше 180 символов - устанавливаем true,
 // меньше - false.
 
-const checkBodyLength = userComments.map(user => {
-  if (user.body.length > 180) {
-    return { ...user, isInvalid: true };
-  } else {
-    return { ...user, isInvalid: false }
-  }
-});
+const checkBodyLength = userComments.map(user =>
+  user.body.length > 180
+  ? { ...user, isInvalid: true }
+  : { ...user, isInvalid: false }
+);
 console.log(checkBodyLength);
 
 // 11. Почитать про метод массива reduce. Используя его, вывести массив почт и 
 // провернуть тоже самое с помощью метода map
 
-const getUserEmails = userComments.reduce((acc, uscom) => {
-  acc.push(uscom.email)
+const getUserEmails = userComments.reduce((acc, user) => {
+  acc.push(user.email)
   return acc
 }, []);
 console.log(getUserEmails);
 
-const mapUserEmails = userComments.map(uscom => uscom.email);
+const mapUserEmails = userComments.map(user => user.email);
 console.log(mapUserEmails);
 
 //12. Почитать про методы toString(), join() и перебрав массив с задания №11, привести его к строке.
