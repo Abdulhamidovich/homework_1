@@ -45,10 +45,10 @@ const mapToIdAndName = userComments.map(userName => ({id: userName.id, name: use
 // если длина тела сообщения (body) больше 180 символов - устанавливаем true,
 // меньше - false.
 
-const checkBodyLength = userComments.map(user =>
-  user.body.length > 180
-  ? { ...user, isInvalid: true }
-  : { ...user, isInvalid: false }
+const checkBodyLength = userComments.map(comment =>
+  comment.body.length > 180
+  ? { ...comment, isInvalid: true }
+  : { ...comment, isInvalid: false }
 );
 console.log(checkBodyLength);
 
