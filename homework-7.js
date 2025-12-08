@@ -45,11 +45,10 @@ const mapToIdAndName = userComments.map(userName => ({id: userName.id, name: use
 // если длина тела сообщения (body) больше 180 символов - устанавливаем true,
 // меньше - false.
 
-const checkBodyLength = userComments.map(comment =>
-  comment.body.length > 180
-  ? { ...comment, isInvalid: true }
-  : { ...comment, isInvalid: false }
-);
+const checkBodyLength = userComments.map(comment => ({
+  ...comment,
+  isInvalid: comment.body.length > 180
+  }));
 console.log(checkBodyLength);
 
 // 11. Почитать про метод массива reduce. Используя его, вывести массив почт и 
