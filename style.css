@@ -80,7 +80,7 @@
     line-height: 24px;
 }
 
-.card-list {
+#card-list {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -115,4 +115,9 @@
 
 .bg-yellow {
   background-color: yellow;
+}
+
+.product-image {
+    width: 290px;
+    height: 245px;
 }
