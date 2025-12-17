@@ -1,4 +1,4 @@
-import {productCardTemplate} from "./product- cards.js";
+import {productCardTemplate} from "./product-cards.js";
 
 const cardListTemplate = document.querySelector('#card-list-template')
 const cardList = document.querySelector('#card-list')
@@ -7,28 +7,32 @@ const cardList = document.querySelector('#card-list')
 //  и в зависимости от результата - будет выводить это количество. Должна быть защита от введенных других значений (имеется ввиду проверка if).
 // P.S - код из задания №3 переместить в функцию, не нужно его дублировать
 
-const cardsCount = () => {
+const getCardsCount = () => {
     const result = Number(prompt("Сколько карточек отобразить?"))
     if (result < 1 || result > 5 || isNaN(result)) {
         alert("Ошибка! Введите число от 1 до 5");
-        return cardsCount();
+        return getCardsCount();
     }
     return result;
 }
 
-const showCards = cardsCount()
+const showCards = getCardsCount()
 productCardTemplate.forEach((card, index) => {
     if (index >= showCards) return;
     const cardCloned = cardListTemplate.content.cloneNode(true);
-    cardCloned.querySelector('.product-category').textContent = card.productCategory;
-    cardCloned.querySelector('.product-name').textContent = card.productName;
+    const imgSrc = '/images/'
+    const compaundList = item => {
+
+    }
+    cardCloned.querySelector('.product-category').textContent = card.category;
+    cardCloned.querySelector('.product-name').textContent = card.name;
     cardCloned.querySelector('.description').textContent = card.description;
-    cardCloned.querySelector('.compound-label').textContent = card.compoundLabel;
-    cardCloned.querySelector('.product-compound').textContent = card.compound;
-    cardCloned.querySelector('.product-price-label').textContent = card.priceLabel;
+    cardCloned.querySelector('.product-compound').innerHTML = card.compound
+    .map(item => `<li>${item}</li>`)
+    .join('');
     cardCloned.querySelector('.product-price').textContent = `${card.price} ${card.currency}`;
-    cardCloned.querySelector('img').src = card.imgSrc;
-    cardCloned.querySelector('img').alt = card.imgAlt;
+    cardCloned.querySelector('img').src = `${imgSrc}${card.imgSrc}`;
+    cardCloned.querySelector('img').alt = card.name;
     cardList.appendChild(cardCloned);
 });
 
