@@ -88,9 +88,8 @@
   list-style: none;
   margin-left: 85px;
   margin-top: -310px;
-  position: relative;
-  width: 1110px;
-  height: 1191px;
+  position:relative;
+  max-width: 1110px;
   list-style-type: none;
   align-items: center;
 }

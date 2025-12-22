@@ -20,18 +20,15 @@ const showCards = getCardsCount()
 productCardTemplate.forEach((card, index) => {
     if (index >= showCards) return;
     const cardCloned = cardListTemplate.content.cloneNode(true);
-    const imgSrc = '/images/'
-    const compaundList = item => {
-
-    }
     cardCloned.querySelector('.product-category').textContent = card.category;
     cardCloned.querySelector('.product-name').textContent = card.name;
     cardCloned.querySelector('.description').textContent = card.description;
-    cardCloned.querySelector('.product-compound').innerHTML = card.compound
-    .map(item => `<li>${item}</li>`)
-    .join('');
+    cardCloned.querySelector('.product-compound').innerHTML =
+        card.compound
+            .map(item => `<li>${item}</li>`)
+            .join('');
     cardCloned.querySelector('.product-price').textContent = `${card.price} ${card.currency}`;
-    cardCloned.querySelector('img').src = `${imgSrc}${card.imgSrc}`;
+    cardCloned.querySelector('img').src =`/images/${card.imgName}.png`;
     cardCloned.querySelector('img').alt = card.name;
     cardList.appendChild(cardCloned);
 });
