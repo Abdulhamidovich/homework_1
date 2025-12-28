@@ -16,8 +16,9 @@ const getCardsCount = () => {
     return result;
 };
 
+const maxCards = getCardsCount();
+
 const renderProductCards = (template) => {
-    const maxCards = getCardsCount();
     template.forEach((card, index) => {
         if (index >= maxCards) return;
         const cardCloned = cardListTemplate.content.cloneNode(true);
@@ -35,7 +36,8 @@ const renderProductCards = (template) => {
     });
 }
 
-renderProductCards(productCardTemplate);
+const cardsToRender = productCardTemplate.slice(0, maxCards);
+renderProductCards(cardsToRender);
 
 // Используя метод .reduce(), получить строку, которая состоит из названий продуктовых карточек, разделенных точкой с запятой
 
