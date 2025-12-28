@@ -14,12 +14,12 @@ const getCardsCount = () => {
         return getCardsCount();
     }
     return result;
-}
+};
 
-const showCards = getCardsCount()
 const renderProductCards = (template) => {
+    const maxCards = getCardsCount();
     template.forEach((card, index) => {
-        if (index >= showCards) return;
+        if (index >= maxCards) return;
         const cardCloned = cardListTemplate.content.cloneNode(true);
         cardCloned.querySelector('.product-category').textContent = card.category;
         cardCloned.querySelector('.product-name').textContent = card.name;
@@ -35,12 +35,12 @@ const renderProductCards = (template) => {
     });
 }
 
-renderProductCards(productCardTemplate)
+renderProductCards(productCardTemplate);
 
 // Используя метод .reduce(), получить строку, которая состоит из названий продуктовых карточек, разделенных точкой с запятой
 
 const productCardNames = productCardTemplate.reduce((acc, card) => {
-    acc.push(card.productName)
+    acc.push(card.name)
     return acc;
 }, []).join('; ')
 console.log(productCardNames);
