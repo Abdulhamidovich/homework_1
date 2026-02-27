@@ -14,29 +14,35 @@ const getCardsCount = () => {
         return getCardsCount();
     }
     return result;
+};
+
+const maxCards = getCardsCount();
+
+const renderProductCards = (template) => {
+    template.forEach((card, index) => {
+        if (index >= maxCards) return;
+        const cardCloned = cardListTemplate.content.cloneNode(true);
+        cardCloned.querySelector('.product-category').textContent = card.category;
+        cardCloned.querySelector('.product-name').textContent = card.name;
+        cardCloned.querySelector('.description').textContent = card.description;
+        cardCloned.querySelector('.product-compound').innerHTML =
+            card.compound
+                .map(item => `<li>${item}</li>`)
+                .join('');
+        cardCloned.querySelector('.product-price').textContent = `${card.price} ${card.currency}`;
+        cardCloned.querySelector('img').src =`/images/${card.imgName}.png`;
+        cardCloned.querySelector('img').alt = card.name;
+        cardList.appendChild(cardCloned);
+    });
 }
 
-const showCards = getCardsCount()
-productCardTemplate.forEach((card, index) => {
-    if (index >= showCards) return;
-    const cardCloned = cardListTemplate.content.cloneNode(true);
-    cardCloned.querySelector('.product-category').textContent = card.category;
-    cardCloned.querySelector('.product-name').textContent = card.name;
-    cardCloned.querySelector('.description').textContent = card.description;
-    cardCloned.querySelector('.product-compound').innerHTML =
-        card.compound
-            .map(item => `<li>${item}</li>`)
-            .join('');
-    cardCloned.querySelector('.product-price').textContent = `${card.price} ${card.currency}`;
-    cardCloned.querySelector('img').src =`/images/${card.imgName}.png`;
-    cardCloned.querySelector('img').alt = card.name;
-    cardList.appendChild(cardCloned);
-});
+const cardsToRender = productCardTemplate.slice(0, maxCards);
+renderProductCards(cardsToRender);
 
 // Используя метод .reduce(), получить строку, которая состоит из названий продуктовых карточек, разделенных точкой с запятой
 
 const productCardNames = productCardTemplate.reduce((acc, card) => {
-    acc.push(card.productName)
+    acc.push(card.name)
     return acc;
 }, []).join('; ')
 console.log(productCardNames);
@@ -44,7 +50,7 @@ console.log(productCardNames);
 // Используя метод .reduce(), получить массив объектов, где ключем является название продукта, а значением - его описание
 
 const productArray = productCardTemplate.reduce((acc, card) => {
-    acc.push({[card.productName] : card.description});
+    acc.push({[card.name] : card.description});
     return acc;
 }, [] )
 console.log(productArray);

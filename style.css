@@ -112,11 +112,6 @@
     height: 245px;
 }
 
-.prob {
-    width:max-content;
-    margin: 0 auto;
-}
-
 .no-scroll {
     overflow: hidden;
 }

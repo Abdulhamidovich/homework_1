@@ -9,7 +9,7 @@ export const productCardTemplate = [
             'солнцезащитные компоненты'
         ],
         price: 2500,
-        imgName: 'product-muss',
+        imgName: 'muss',
         currency: '₽'
     },
     {
@@ -22,7 +22,7 @@ export const productCardTemplate = [
             'Масла'
         ],
         price: 3500,
-        imgName: 'product-mask',
+        imgName: 'mask',
         currency: '₽'
     },
     {
@@ -35,7 +35,7 @@ export const productCardTemplate = [
             'солнцезащитные компоненты'
         ],
         price: 1650,
-        imgName: 'product-gel',
+        imgName: 'gel',
         currency: '₽'
     },
     {
@@ -48,7 +48,7 @@ export const productCardTemplate = [
             'Масла'
         ],
         price: 4750,
-        imgName: 'product-box-1',
+        imgName: 'giftbox1',
         currency: '₽'
     },
     {
@@ -61,7 +61,7 @@ export const productCardTemplate = [
             'Масла'
         ],
         price: 7520,
-        imgName: 'product-box-5',
+        imgName: 'giftbox5',
         currency: '₽'
     }
 ]
