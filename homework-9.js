@@ -32,14 +32,13 @@ const userLogin = document.getElementById('user-login');
 const userPass = document.getElementById('user-pass');
 const userPassConfirm = document.getElementById('user-pass-confirm');
 
-modalForm.addEventListener('submit',(event) => {
-    if(userPass.value != userPassConfirm.value) {
+modalForm.addEventListener('submit', (event) => {
+    if (userPass.value != userPassConfirm.value) {
         event.preventDefault();
-        alert('Пароли не совпадают!');}
-    else if(!modalForm.reportValidity()) {
-        alert('Заполните все поля!')
-    }
-    else {
+        alert('Пароли не совпадают!');
+    } else if (!modalForm.reportValidity()) {
+        alert('Заполните все поля!');
+    } else {
         alert('Регистрация успешна!');
         const form = event.target;
         const formData = new FormData(form);
