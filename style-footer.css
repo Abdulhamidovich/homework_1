@@ -34,6 +34,7 @@
 .icons {
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
@@ -43,8 +44,8 @@
 }
 
 .footer-telegram-icon {
-    width: 21px;
-    height: 18px;
+    width: 26px;
+    height: 23px;
     padding-left: 8px;
 }
 
