@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product-card</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-footer.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
@@ -12,33 +13,107 @@
 </head>
 
 <body>
-    <div class="background"></div>
-    <h1 class="main-title">Выбери свой продукт</h1>
-    <div class="buttons-panel">
-        <button id="btn-change-color-first-card">Сменить цвет первой карточки</button>
-        <button id="btn-change-color-all-cards">Сменить цвет всех карточек</button>
-        <button id="btn-open-google">Открыть Google</button>
-        <button id="btn-show-message">Вывод в консоль</button>
-        <button id="btn-change-bg">Сменить фон кнопки</button>
-    </div>
-    <template id='card-list-template'>
-        <li class="card-container">
-            <img src="" alt="" class="product-image">
-            <span class="product-category"></span>
-            <h3 class="product-name"></h3>
-            <p class="description"></p>
-            <p class="compound-label">Состав:</p> 
-            <ul class="product-compound"></ul>
-            <div class="product-price-container">
-                <span class="product-price-label">Цена:</span>
-                <span class="product-price"></span>
+    <section class="main">
+        <h1 class="main-title">Выбери свой продукт</h1>
+        <div class="buttons-panel">
+            <button id="btn-change-color-first-card">Сменить цвет первой карточки</button>
+            <button id="btn-change-color-all-cards">Сменить цвет всех карточек</button>
+            <button id="btn-open-google">Открыть Google</button>
+            <button id="btn-show-message">Вывод в консоль</button>
+            <button id="btn-change-bg">Сменить фон кнопки</button>
+        </div>
+        <template id='card-list-template'>
+            <li class="card-container">
+                <img src="" alt="" class="product-image">
+                <span class="product-category"></span>
+                <h3 class="product-name"></h3>
+                <p class="description"></p>
+                <p class="compound-label">Состав:</p> 
+                <ul class="product-compound"></ul>
+                <div class="product-price-container">
+                    <span class="product-price-label">Цена:</span>
+                    <span class="product-price"></span>
+                </div>
+            </li>
+        </template>
+        <ul id="card-list"></ul>
+    </section>
+    <footer>
+        <div class="bckgrnd">
+            <div class="left-footer-block">
+                <h2 class="product-cards-label">Product Cards</h2>
+                <p class="best-product-label">У нас самые лучшие продукты для кожи!</p>
+                <div class="icons">
+                    <img src="/images/telegram_icon.svg" class="footer-telegram-icon">
+                    <img src="/images/vk_icon.svg" class="footer-vk-icon">
+                </div>
             </div>
-        </li>
-    </template>
-    <ul id="card-list"></ul>
+            <div class="center-footer-block">
+                <p class="subscribe-label">Подпишись на наши акции</p>
+                <form id="subscribe-form">
+                    <input id="email-form" type="email" name="email" required placeholder="  Введи E-mail...">
+                    <span class="input-separator">|</span>
+                    <button id="subscribe-button" type="submit">Подписаться</button>
+                </form>
+                <button class="registration-button">Регистрация</button>
+                <hr class="separator">
+                <span class="footer-link">www.product-cards.com © all right reserve</span>
+            </div>
+            <div class="right-footer-block">
+                <nav>
+                    <span class="fast-links-label">Быстрые ссылки</span>
+                    <ul class="list-links">
+                        <li><a href="" class="li-links">Главная</a></li>
+                        <li><a href="" class="li-links">Магазин</a></li>
+                        <li><a href="" class="li-links">Контакты</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal">
+        <div class="modal-content">
+            <button class="close-button">&times;</button>
+            <form id="registration-form">
+            <div class="form-group">
+                <label>Фамилия</label>
+                <input id='user-last-name' type="text" name="last-name" placeholder="Введите фамилию" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Имя</label>
+                <input id='user-name' type="text" name="name" placeholder="Введите имя" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Дата рождения</label>
+                <input id='user-date-of-birth' type="date" name="date-of-birth" placeholder="Введите дату рождения" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Логин</label>
+                <input id='user-login' type="text" name="login" placeholder="Придумайте логин" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Пароль</label>
+                <input id='user-pass' type="password" name="password" placeholder="Придумайте пароль" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Повторите пароль</label>
+                <input id='user-pass-confirm' class="modal-label-name" type="password" placeholder="Повторите пароль" required>
+                </div>
+                <button class="submit-button" type="submit">Регистрация</button>
+            </form>
+        </div>
+    </div>
 
     <script src="main.js"></script>
+    <script type="module" src="homework-6.js"></script>
     <script type="module" src="homework-7.js"></script>
     <script type="module" src="homework-8.js"></script>
+    <script type="module" src="homework-9.js"></script>
 </body>
 </html>
